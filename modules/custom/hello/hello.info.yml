@@ -1,0 +1,14 @@
+name: Hello
+
+description: POEI Module Hello
+
+type: module
+
+core: 8.x
+
+version: 8.x-1.0
+
+package: Training
+
+dependencies:
+  - views

@@ -1,0 +1,80 @@
+<?php
+
+use Drupal\Core\Database\Database;
+
+/**
+ * @file
+ * Install, update and uninstall functions for the Annonce module.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function annonce_schema() {
+    $schema['annonce_history'] = array(
+        'description' => 'Stores annonce per user.',
+        'fields' => array(
+            'ahid' => array(
+                'description' => 'Annonce history ID.',
+                'type' => 'serial',
+                'length' => 10,
+                'not null' => TRUE,
+            ),
+            'uid' => array(
+                'description' => 'User ID.',
+                'type' => 'int',
+                'length' => 10,
+                'not null' => TRUE,
+            ),
+            'aid' => array(
+                'description' => 'Visited annonce ID',
+                'type' => 'int',
+                'length' => 10,
+                'not null' => TRUE,
+            ),
+            'date' => array(
+                'description' => 'Date',
+                'type' => 'int',
+                'length' => 10,
+                'not null' => TRUE,
+            ),
+            'acl' => array(
+                'type' => 'varchar', 
+                'length' => 255, 
+                'not null' => TRUE, 
+                'default' => ''
+            ),
+        ),
+        'indexes' => array(
+            'uid' => array('uid'),
+        ),
+        'primary key' => array('ahid'),
+    );
+
+    return $schema;
+}
+
+/**
+ * Add the title field to the annonce_history table.
+ */
+function annonce_update_8001() {
+    // https://www.drupal.org/docs/8/api/update-api/updating-database-schema-andor-data-in-drupal-8
+    // hook pour la MAJ
+    // hook_update_8100() pour la version 8.x-1.0
+    // hook_update_8101() pour la version 8.x-1.01
+    
+    // http://user8.d8.lab/update.php
+    // A lancer lorsque le code à été mis à jour et ensuite il faut lancer la mise à jour des tables
+
+    $spec = array(
+                'type' => 'varchar', 
+                'length' => 255, 
+                'not null' => TRUE, 
+                'default' => ''
+            );
+    
+    $schema = Database::getConnection()->schema();
+    $schema->addField('annonce_history', 'acl', $spec);
+    
+    drupal_set_message(t('Modification effectué sur la table !'), 'status');
+}

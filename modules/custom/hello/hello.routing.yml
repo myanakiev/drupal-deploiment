@@ -1,0 +1,90 @@
+hello.hello:
+    path: '/hello/{param}'
+    defaults:
+        _title: 'Hello_Title'
+        _controller: '\Drupal\hello\Controller\HelloController::getContent'
+        _title_callback: '\Drupal\hello\Controller\HelloController::getTitle' # ceci n'est pas obligatoire, peut etre redefini à travers _title ou $build['#title'] dans la classe
+        param: 'no parameter'
+    requirements:
+        _access: 'TRUE'
+#       _permission: 'administer blocks'
+#       _permission: 'access content'
+
+hello.hello.json:
+    path: '/hello.json'
+    defaults:
+        _controller: '\Drupal\hello\Controller\HelloJSONController::getContent'
+    requirements:
+        _access: 'TRUE'
+
+hello.hello.node_list:
+    path: '/hello-list/{param}'
+    defaults:
+        _title: 'Hello List'
+        _controller: '\Drupal\hello\Controller\HelloNodeListController::getContent'
+        _title_callback: '\Drupal\hello\Controller\HelloNodeListController::getTitle'
+        param: 'article'
+    requirements:
+        _access: 'TRUE'
+
+hello.history:
+    path: '/node/{node}/history'
+    defaults:
+        _title: 'Update history page'
+        _controller: '\Drupal\hello\Controller\HelloHistory::getContent'
+    requirements:
+        _permission: 'view published content'
+
+hello.form:
+    path: '/hello-form'
+    defaults:
+        _title: 'Hello form'
+        _form: '\Drupal\hello\Form\HelloForm'
+    requirements:
+        _access: 'TRUE'
+        _permission: 'administer hello'
+
+hello.color.config:
+    path: '/admin/appearance/color-config'
+    defaults:
+        _title: 'Page de configure des couleur des blocs'
+        _form: '\Drupal\hello\Form\HelloColorConfigForm'
+    requirements:
+        _access: 'TRUE'
+        _permission: 'administer hello'
+
+hello.access:
+    path: '/hello-access'
+    defaults:
+        _title: 'Hello Access Seniority'
+        _controller: '\Drupal\hello\Controller\HelloController::getContent'
+        param: 'article'
+    requirements:
+       _access_seniority: '48'
+
+hello.countrylist:
+    path: '/country-list/{param}'
+    defaults:
+        _title: 'Country List'
+        _controller: '\Drupal\hello\Controller\CountryList::getContent'
+        _title_callback: '\Drupal\hello\Controller\CountryList::getTitle'
+        param: 'Europe'
+    requirements:
+        _access: 'TRUE'
+
+hello.drupal_generate_controller_getContent:
+  path: '/generate-controller'
+  defaults:
+    _controller: '\Drupal\hello\Controller\DrupalGenerateController::getContent'
+    _title: 'getTitle'
+  requirements:
+    _permission: 'access content'
+
+hello.conversion-table:
+    path: '/conversion-table'
+    defaults:
+        _title: 'Conversion Table'
+        _form: '\Drupal\hello\Form\ConversionTableForm'
+        _title_callback: '\Drupal\hello\Form\ConversionTableForm::getTitle'
+    requirements:
+        _access: 'TRUE'

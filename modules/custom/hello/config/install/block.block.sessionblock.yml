@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - hello
+  theme:
+    - bartik
+id: sessionblock
+theme: bartik
+region: sidebar_first
+weight: -8
+provider: null
+plugin: session_block
+settings:
+  id: session_block
+  label: 'Session Block'
+  provider: hello
+  label_display: visible
+visibility: {  }

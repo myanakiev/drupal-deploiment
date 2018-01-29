@@ -1,0 +1,15 @@
+services:
+  access_check.hello:
+    class: '\Drupal\hello\Access\HelloAccessSeniority'
+    tags:
+      - { name: access_check, applies_to: _access_seniority }
+
+  hello.route_subscriber:
+    class: '\Drupal\hello\Routing\RouteSubscriberModules'
+    tags:
+      - { name: event_subscriber }
+
+    #arguments: ['@language.default']
+    #arguments: ['%language.default_values%']
+    #arguments: [replica]
+    #arguments: ['@container.namespaces', '@cache.discovery', '@module_handler', '@class_resolver']

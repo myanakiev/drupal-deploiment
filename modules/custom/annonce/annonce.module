@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * @file
+ * Contains annonce.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function annonce_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the annonce module.
+    case 'help.page.annonce':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Exemple d&#039;entite custom annonce') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+function annonce_theme() {
+    return [
+        'annonce' => [
+            'template' => 'annonce',
+            'render element' => 'elements'
+        ]
+    ];
+}

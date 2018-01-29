@@ -1,0 +1,5 @@
+name: annonce
+type: module
+description: Exemple d'entite custom annonce
+core: 8.x
+package: Custom

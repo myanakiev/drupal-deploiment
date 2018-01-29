@@ -1,0 +1,71 @@
+@import url("//fonts.googleapis.com/css?family=Roboto:400,300,500,700,900|Roboto+Condensed:400,300,700");
+
+body {
+    font-family: Roboto;
+}
+
+h2, h2 a, h2 a span, .site-branding a {
+	color: orange;
+}
+
+h2, h2 a, h2 a span, .site-branding a {
+    font-size: 2rem !important;
+}
+
+#header, .sidebar .block {
+	background: #fff;
+	border-color: transparent;
+}
+
+.sidebar h2 {
+	font-style: italic;
+	border-color: orange;
+	text-transform: uppercase;
+}
+
+.region-primary-menu .menu-item a {
+	background-color: #fff;
+	color: orange;
+}
+.region-primary-menu .menu-item a.is-active {
+	background-color: orange;
+	color: #fff;
+}
+
+.button.search-form__submit, .search-form__submit {
+	background: #f0f0f0 url("../../../../../core/misc/icons/505050/loupe.svg") no-repeat center;
+}
+
+.region.region-content-wide {
+    text-align: center;
+}
+
+.node__content_flex, .field--name-field-tags {
+	display: flex;
+}
+.node__content_flex .node__content_left {
+	width: 25%;
+}
+.node__content_flex .node__content_right {
+	width: 75%;
+}
+.node__content_flex img {
+	max-height: 100px;
+}
+
+.form-required-text span {
+	font-style: italic;
+	color: red;
+}
+
+
+a.external-link:before {
+    content: url('../images/external-link.gif');
+    display: inline-block;
+    max-height: 1em;
+	vertical-align: middle;
+}
+
+#tabs .field--type-image {
+	float: none;
+}

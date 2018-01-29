@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - hello
+  theme:
+    - bartik
+id: helloblock
+theme: bartik
+region: sidebar_first
+weight: -7
+provider: null
+plugin: hello_block
+settings:
+  id: hello_block
+  label: 'Hello Block'
+  provider: hello
+  label_display: visible
+visibility: {  }

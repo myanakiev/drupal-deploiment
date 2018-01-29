@@ -46,8 +46,10 @@ xmlrpc.php
 /scripts
 
 # Ignore everything but the "custom" subfolder of "modules" and "themes"
-modules/
-!modules/custom/
-themes/
-!themes/custom/
+!/modules/
+/modules/*
+!/modules/custom/
+!/themes/
+/themes/*
+!/themes/custom/
 

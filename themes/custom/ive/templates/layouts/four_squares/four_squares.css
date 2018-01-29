@@ -1,0 +1,30 @@
+/**
+ * @file
+ * Styles for four_squares
+ */
+
+ /*
+.layout__region:nth-child(1) {
+	background-color: red;
+}
+.layout__region:nth-child(2) {
+	background-color: blue;
+}
+.layout__region:nth-child(4) {
+	background-color: yellow;
+}
+.layout__region:nth-child(5) {
+	background-color: aqua;
+}
+*/
+.layout__region {
+	width: 48%;
+	float: left;
+	max-height: 150px;
+}
+.layout__region--clear {
+	clear: both;
+}
+.layout__region  img {
+	max-height: 100px;
+}

@@ -1,0 +1,78 @@
+<?php
+
+use Drupal\block\Entity\Block;
+
+function hello_cron() {
+    drupal_set_message(t('Execution à partir du module Hello, theme: ') . \Drupal::service('theme.manager')->getActiveTheme()->getName(), 'warning');
+}
+
+function hello_user_login($account) {
+    //kint($account);
+    //die();
+    drupal_set_message(t(sprintf('Bienvenue cher %s, id: %s !', $account->getAccountName(), $account->id())), 'warning');
+    \Drupal::service('cache_tags.invalidator')->invalidateTags(['session']);
+}
+
+function hello_user_logout($account) {
+    // https://www.drupal.org/docs/8/api/cache-api/cache-tags
+    
+    \Drupal::service('cache_tags.invalidator')->invalidateTags(['session']);
+    // or by this way
+    // \Drupal\Core\Cache\Cache::invalidateTags(['session']);
+}
+
+function hello_node_update($node) {
+    // https://api.drupal.org/api/drupal/modules%21node%21node.api.php/group/node_api_hooks/8.x
+    
+    hello_node_track_update($node, 'update');
+}
+
+function hello_node_delete($node) {
+    hello_node_track_update($node, 'delete');
+}
+
+function hello_node_track_update($node, $changed = '') {
+    // c'est la meme chose
+    //$conn = Database::getConnection();
+    $conn = \Drupal::database();
+    $user = \Drupal::service('current_user');
+    
+    $conn->insert('hello_node_history')->fields(
+        array(
+            'nid'         => $node->id(),
+            'uid'         => $user->id(),
+            'update_time' => $node->getChangedTime(),
+        )
+    )->execute();
+
+    //nid : ID du noeud.
+    //uid : ID de l’utilisateur ayant créé le noeud.
+    //changed : Date de modification (timestamp).
+}
+
+function hello_page_attachments(array &$page) {
+    $page['#attached']['library'][] = 'hello/base';
+}
+
+function hello_preprocess_block(&$variables) {
+    $block = Block::load($variables['elements']['#id']);
+    $region = $block->getRegion();
+    
+    // Add classes to all bocks in footer region.
+    if($region == 'sidebar_first') {
+        $color = \Drupal::config('hello.config')->get('color');
+        $variables['attributes']['class'][] = $color;
+    }
+}
+
+function hello_theme($existing, $type, $theme, $path) {
+    return [
+        'hello_node_history' => [
+            'template'  => 'hello-node-history',
+            'variables' => [
+                'count' => NULL,
+                'node'  => NULL,
+            ],
+        ],
+    ];
+}

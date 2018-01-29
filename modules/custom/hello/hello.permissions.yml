@@ -1,0 +1,10 @@
+active_sessions_permission:
+    title: 'Hello Access on Active Sessions'
+    description: 'Permission to check the access on active sessions block.'
+    restrict access: 'true'
+
+administer hello:
+    title: 'Administer Hello'
+    description: 'Permission to check the access on Hello.'
+    restrict access: 'true'
+    

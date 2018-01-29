@@ -1,0 +1,26 @@
+hello.page:
+    title: 'Hello!'
+    route_name: hello.hello
+    description: 'Hello Page'
+    menu_name: main
+    weight: 100
+    options: 
+        attributes:
+            target: _blank
+
+hello.mon_lien:
+    deriver: 'Drupal\hello\Plugin\Derivative\DynamicLink'
+
+hello.pagelist:
+    title: 'List of Nodes'
+    route_name: hello.hello.node_list
+    description: 'List of Nodes'
+    menu_name: main
+    weight: 102
+
+hello.config.color:
+    title: 'Couleur des blocs'
+    route_name: hello.color.config
+    description: 'Configure les couleur des blocs'
+    menu_name: admin
+    parent: 'system.themes_page'
