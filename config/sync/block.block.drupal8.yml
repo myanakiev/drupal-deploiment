@@ -1,0 +1,25 @@
+uuid: ec31f63c-cb8f-4306-8c53-7522aa24bcf2
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:43294735-69ff-44ab-8492-d4270754f23f'
+  module:
+    - block_content
+  theme:
+    - ive
+id: drupal8
+theme: ive
+region: content_wide
+weight: 0
+provider: null
+plugin: 'block_content:43294735-69ff-44ab-8492-d4270754f23f'
+settings:
+  id: 'block_content:43294735-69ff-44ab-8492-d4270754f23f'
+  label: 'Drupal 8'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

@@ -1,0 +1,20 @@
+uuid: 7594fabf-1dab-4068-9a1e-ff95e1b56d16
+langcode: en
+status: true
+dependencies:
+  theme:
+    - ive
+_core:
+  default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
+id: ive_page_title
+theme: ive
+region: content
+weight: -8
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

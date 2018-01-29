@@ -1,0 +1,15 @@
+uuid: f5e1d78f-3df0-4fa8-bf47-2d50dd36037a
+langcode: en
+status: true
+dependencies: {  }
+name: ive_wide
+label: 'Ive wide'
+effects:
+  989be2d4-24fa-4805-ad9b-c45e6ea0159d:
+    uuid: 989be2d4-24fa-4805-ad9b-c45e6ea0159d
+    id: image_scale
+    weight: 1
+    data:
+      width: 425
+      height: 425
+      upscale: true

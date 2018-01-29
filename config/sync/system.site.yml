@@ -1,0 +1,14 @@
+uuid: 1d37ae15-d141-4501-8226-dff2e4825627
+name: 'Theming Drupal 8'
+mail: momchil.yanakiev+poei@gmail.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI

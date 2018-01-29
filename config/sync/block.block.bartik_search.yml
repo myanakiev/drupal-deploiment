@@ -1,0 +1,29 @@
+uuid: deff8edb-5b95-4107-9658-3e83f21f6868
+langcode: en
+status: true
+dependencies:
+  module:
+    - annonce
+    - search
+  theme:
+    - bartik
+_core:
+  default_config_hash: za-39d5WDUg6XvbyqSnuVYEeq6QM4qKJxW8MnoAha5A
+id: bartik_search
+theme: bartik
+region: sidebar_first
+weight: -6
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: Search
+  provider: search
+  label_display: visible
+visibility:
+  date_visibility_condition:
+    id: date_visibility_condition
+    date_s: 1516381201
+    date_e: null
+    negate: false
+    context_mapping: {  }

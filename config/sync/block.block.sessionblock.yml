@@ -1,0 +1,22 @@
+uuid: cba4e21d-f265-47e8-b65b-654c0d7b913c
+langcode: en
+status: true
+dependencies:
+  module:
+    - hello
+  theme:
+    - bartik
+_core:
+  default_config_hash: Y255FqjM6KX_L2zQ7OhS2hDFqRI-be_9pe4mZDJKFW8
+id: sessionblock
+theme: bartik
+region: sidebar_first
+weight: -8
+provider: null
+plugin: session_block
+settings:
+  id: session_block
+  label: 'Session Block'
+  provider: hello
+  label_display: visible
+visibility: {  }

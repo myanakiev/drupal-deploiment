@@ -1,0 +1,11 @@
+uuid: 12363270-48d6-4fc9-ba1d-62e4685e6642
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.hotel
+id: node.hotel
+target_entity_type_id: node
+target_bundle: hotel
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,22 @@
+uuid: 8ea67249-8e84-49a1-8de0-5a4a1ab25c82
+langcode: en
+status: true
+dependencies:
+  module:
+    - hello
+  theme:
+    - bartik
+_core:
+  default_config_hash: nLPSBicmFM03HUFIuzg8ni9fqCYDUVM1BytlqAxO_Z8
+id: helloblock
+theme: bartik
+region: sidebar_first
+weight: -7
+provider: null
+plugin: hello_block
+settings:
+  id: hello_block
+  label: 'Hello Block'
+  provider: hello
+  label_display: visible
+visibility: {  }

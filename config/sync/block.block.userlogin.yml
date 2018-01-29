@@ -1,0 +1,20 @@
+uuid: 74f773a5-7688-4aa9-8bd3-31a535db3eea
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+  theme:
+    - ive
+id: userlogin
+theme: ive
+region: secondary_menu
+weight: 0
+provider: null
+plugin: user_login_block
+settings:
+  id: user_login_block
+  label: 'User login'
+  provider: user
+  label_display: visible
+visibility: {  }

@@ -1,3 +1,15 @@
+# Ignore default and core files.
+core/
+sites/
+vendor/
+libraries/
+.csslintrc
+.editorconfig
+.eslintignore
+.eslintrc.json
+.gitattributes
+autoload.php
+
 # Ignore configuration files that may contain sensitive information.
 sites/*/*settings*.php
 
@@ -30,7 +42,12 @@ update.php
 xmlrpc.php
 /includes
 /misc
-/modules
 /profiles
 /scripts
-/themes
+
+# Ignore everything but the "custom" subfolder of "modules" and "themes"
+modules/
+!modules/custom/
+themes/
+!themes/custom/
+
